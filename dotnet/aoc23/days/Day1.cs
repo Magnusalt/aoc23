@@ -1,38 +1,18 @@
-using System.Security.Cryptography;
+using aoc23.helpers;
+
+namespace aoc23.days;
 
 static class Day1
 {
     public static async Task<int> RunPart1()
     {
-        var input = await File.ReadAllLinesAsync(@"C:\src\aoc23\dotnet\aoc23\input\1.txt");
-
-        var sum = 0;
-        foreach (var line in input)
-        {
-            var first = '0';
-            var last = '0';
-            var foundFirst = false;
-            foreach (var c in line)
-            {
-                if (char.IsNumber(c))
-                {
-                    if (!foundFirst)
-                    {
-                        first = c;
-                        foundFirst = true;
-                    }
-                    last = c;
-                }
-            }
-            sum += int.Parse(new string([first, last]));
-        }
-
-        return sum;
+        return (await FileReader.ReadAllLinesAsync(1))
+        .Aggregate(0, (a, l) => a + (l.First(char.IsNumber) - '0') * 10 + (l.Last(char.IsNumber) - '0'));
     }
 
     public static int RunPart2()
     {
-        var input = File.ReadAllLines(@"C:\src\aoc23\dotnet\aoc23\input\1.txt");
+        var input = FileReader.ReadAllLines(1);
 
         var sum = 0;
         foreach (var line in input)

@@ -1,15 +1,19 @@
+using aoc23.helpers;
+
+namespace aoc23.days;
+
 static class Day2
 {
     public static async Task<int> RunPart1()
     {
-        var input = await File.ReadAllLinesAsync(@"C:\src\aoc23\dotnet\aoc23\input\2.txt");
+        var input = await FileReader.ReadAllLinesAsync(2);
         var result1 = input.Select(CreateGame).Where(ValidateGame).Sum(g => g.Id);
         return result1;
     }
 
     public static async Task<int> RunPart2()
     {
-        var input = await File.ReadAllLinesAsync(@"C:\src\aoc23\dotnet\aoc23\input\2.txt");
+        var input = await FileReader.ReadAllLinesAsync(2);
         var result2 = input.Select(CreateGame).Select(FindSetPower).Sum();
         return result2;
     }
