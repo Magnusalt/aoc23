@@ -107,7 +107,6 @@ public class Day5
 
     static IEnumerable<Slice> FindCovered(Slice slice, IOrderedEnumerable<Mapping> mappings)
     {
-
         foreach (var map in mappings)
         {
             var offset = map.Destination - map.Source;
@@ -154,4 +153,3 @@ public class Day5
     record Slice(long StartIndex, long Range);
     record Mapping(long Source, long Destination, long Range);
 }
-
