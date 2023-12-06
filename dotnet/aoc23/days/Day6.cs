@@ -1,4 +1,5 @@
-using System.Numerics;
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using aoc23.helpers;
 
 namespace aoc23.days;
@@ -26,16 +27,13 @@ static class Day6
 
     private static int CountWaysToBeat(int maxT, long distanceToBeat)
     {
-        var count = 0;
-        for (long i = 0; i < maxT; i++)
-        {
-            long distanceTraveled = maxT * i - (i * i);
-            if (distanceTraveled > distanceToBeat)
-            {
-                count++;
-            }
-        }
-        return count;
+        double peak = (double)maxT / 2;
+        var lower = peak - Math.Sqrt(Math.Pow(peak, 2) - distanceToBeat);
+        var upper = peak + Math.Sqrt(Math.Pow(peak, 2) - distanceToBeat);
+        lower = Math.Floor(lower);
+        upper = Math.Ceiling(upper);
+        var span = upper - lower;
+        return (int)span - 1;
     }
 
     public static int RunPart2()
