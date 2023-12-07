@@ -4,7 +4,6 @@ Console.WriteLine("++++======Day 1======++++");
 Console.WriteLine($"Part 1: {await Day1.RunPart1()}");
 Console.WriteLine($"Part 2: {Day1.RunPart2()}");
 
-
 Console.WriteLine("++++======Day 2======++++");
 Console.WriteLine($"Part 1: {await Day2.RunPart1()}");
 Console.WriteLine($"Part 2: {await Day2.RunPart2()}");
@@ -24,4 +23,8 @@ Console.WriteLine($"Part 2: {Day5.RunPart2()}");
 Console.WriteLine("++++======Day 6======++++");
 Console.WriteLine($"Part 1: {Day6.RunPart1()}");
 Console.WriteLine($"Part 2: {Day6.RunPart2()}");
+
+Console.WriteLine("++++======Day 7======++++");
+Console.WriteLine($"Part 1: {Day7.RunPart1()}");
+Console.WriteLine($"Part 2: {Day7.RunPart2()}");
 
