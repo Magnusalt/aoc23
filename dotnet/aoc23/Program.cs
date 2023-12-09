@@ -30,4 +30,8 @@ Console.WriteLine($"Part 2: {Day7.RunPart2()}");
 
 Console.WriteLine("++++======Day 8======++++");
 Console.WriteLine($"Part 1: {Day8.RunPart1()}");
-Console.WriteLine($"Part 2: {Day8.RunPart2()}");
+//Console.WriteLine($"Part 2: {Day8.RunPart2()}");
+
+Console.WriteLine("++++======Day 9======++++");
+Console.WriteLine($"Part 1: {Day9.RunPart1()}");
+Console.WriteLine($"Part 2: {Day9.RunPart2()}");
