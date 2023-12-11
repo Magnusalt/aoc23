@@ -1,4 +1,3 @@
-using System.Xml.Schema;
 using aoc23.helpers;
 
 public static class Day9
