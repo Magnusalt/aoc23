@@ -1,4 +1,3 @@
-using System.Security.Cryptography;
 using aoc23.helpers;
 
 public static class Day17
