@@ -36,22 +36,14 @@ public static class Day17
 
         queue.Enqueue(start, 0);
         var part2Start = new Position(0, 0, Direction.Down, 0);
-        queue.Enqueue(part2Start, 0);
+        //queue.Enqueue(part2Start, 0);
         visited.Add(start, 0);
-        visited.Add(part2Start, 0);
-        
+        //visited.Add(part2Start, 0);
 
         while (queue.TryDequeue(out var pos, out var priority))
         {
             if (pos.X == goal.X && pos.Y == goal.Y)
             {
-                var temp = pos;
-                while (path.TryGetValue(temp, out var prev))
-                {
-                    var h = visited[temp];
-                    temp = prev;
-                }
-
                 return priority;
             }
 
@@ -159,7 +151,7 @@ public static class Day17
     {
         var (x, y, _, _) = start;
         var neighbours = new List<Position>();
-        for (int i = 4; i < 10; i++)
+        for (int i = 4; i <= 10; i++)
         {
             Position? forward = dir switch
             {
@@ -235,7 +227,7 @@ public static class Day17
     private static int MoveUp((int x, int y) start, int length, char[][] grid)
     {
         var accumulatedHeat = 0;
-        for (int i = start.y; i > start.y - length; i--)
+        for (int i = start.y - 1; i > start.y - length - 1; i--)
         {
             accumulatedHeat += grid[i][start.x] - '0';
         }
@@ -244,7 +236,7 @@ public static class Day17
     private static int MoveDown((int x, int y) start, int length, char[][] grid)
     {
         var accumulatedHeat = 0;
-        for (int i = start.y; i < start.y + length; i++)
+        for (int i = start.y+1; i < start.y + length + 1; i++)
         {
             accumulatedHeat += grid[i][start.x] - '0';
         }
@@ -254,7 +246,7 @@ public static class Day17
     private static int MoveRight((int x, int y) start, int length, char[][] grid)
     {
         var accumulatedHeat = 0;
-        for (int i = start.x; i < start.x + length; i++)
+        for (int i = start.x + 1; i < start.x + length + 1; i++)
         {
             accumulatedHeat += grid[start.y][i] - '0';
         }
@@ -264,7 +256,7 @@ public static class Day17
     private static int MoveLeft((int x, int y) start, int length, char[][] grid)
     {
         var accumulatedHeat = 0;
-        for (int i = start.x; i > start.x - length; i--)
+        for (int i = start.x - 1; i > start.x - length - 1; i--)
         {
             accumulatedHeat += grid[start.y][i] - '0';
         }
