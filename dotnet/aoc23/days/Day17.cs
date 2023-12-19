@@ -36,9 +36,9 @@ public static class Day17
 
         queue.Enqueue(start, 0);
         var part2Start = new Position(0, 0, Direction.Down, 0);
-        //queue.Enqueue(part2Start, 0);
+        queue.Enqueue(part2Start, 0);
         visited.Add(start, 0);
-        //visited.Add(part2Start, 0);
+        visited.Add(part2Start, 0);
 
         while (queue.TryDequeue(out var pos, out var priority))
         {
