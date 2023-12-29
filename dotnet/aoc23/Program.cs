@@ -70,4 +70,10 @@ Console.WriteLine("++++======Day 17======++++");
 
 Console.WriteLine("++++======Day 18======++++");
 Console.WriteLine($"Part 1: {Day18.RunPart1()}");
-Console.WriteLine($"Part 2: {Day18.RunPart2()}");
+//Console.WriteLine($"Part 2: {Day18.RunPart2()}");
+
+Console.WriteLine("++++======Day 21======++++");
+Console.WriteLine($"Part 1: {Day21.RunPart1()}");
+//Console.WriteLine($"Part 2: {Day21.RunPart2()}");
+
+

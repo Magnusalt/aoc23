@@ -105,6 +105,8 @@ public static class Day18
 
         var guessedStart = (x: (int)(maxX - minX) / 2, y: (int)(maxY - minY) / 2);
 
+        
+
         var visited = new HashSet<Vector2>();
 
         var queue = new Queue<Vector2>();
@@ -147,7 +149,14 @@ public static class Day18
     {
         public bool IsOnLine(Vector2 point)
         {
-            return Vector2.Distance(Start, End) == (Vector2.Distance(Start, point) + Vector2.Distance(point, End));
+            var dx = Start.X - End.X;
+            var dy = Start.Y - End.Y;
+
+            var dist1 = Vector2.Distance(Start, point);
+            var dist2 = Vector2.Distance(point, End);
+            var sum = dist1 + dist2;
+
+            return Length == sum && ((dx == 0 && point.X == Start.X) || (dy == 0 && point.Y == Start.Y));
         }
         public int Length => (int)Vector2.Distance(Start, End);
     }
